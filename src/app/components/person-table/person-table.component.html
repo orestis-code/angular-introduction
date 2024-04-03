@@ -3,10 +3,12 @@
     No person details!
   </div>
 }@else {
-<table class="table table-bordered w-50">
+  <table class="table table-bordered">
+    
     <caption class="caption-top fw-bold bg-primary text-light text-center">
       Person Details
     </caption>
+  <tbody> 
     <tr>
       <td class="fw-semibold text-end">First Name</td>
       <td class="ps-2">{{ person.givenName }}</td>
@@ -27,5 +29,6 @@
       <td class="fw-semibold text-end">Address</td>
       <td class="ps-2">{{ person.address }}</td>
     </tr>
+</tbody> 
   </table>
 }
