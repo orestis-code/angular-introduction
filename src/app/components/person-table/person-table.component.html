@@ -1,14 +1,10 @@
-@if(!person) {
-  <div class="alert alert-danger  text-center">
-    No person details!
-  </div>
-}@else {
+@if (!person) {
+  <div class="alert alert-danger text-center">No person details!</div>
+} @else {
   <table class="table table-bordered">
-    
     <caption class="caption-top fw-bold bg-primary text-light text-center">
       Person Details
     </caption>
-  <tbody> 
     <tr>
       <td class="fw-semibold text-end">First Name</td>
       <td class="ps-2">{{ person.givenName }}</td>
@@ -25,10 +21,17 @@
       <td class="fw-semibold text-end">Email</td>
       <td class="ps-2">{{ person.email }}</td>
     </tr>
-    <tr>
-      <td class="fw-semibold text-end">Address</td>
-      <td class="ps-2">{{ person.address }}</td>
-    </tr>
-</tbody> 
+    @if (isPerson()) {
+      <tr>
+        <td class="fw-semibold text-end">Address</td>
+        <td class="ps-2">{{ person["address"] }}</td>
+      </tr>
+    }
+    @if (isEPerson()) {
+      <tr>
+        <td class="fw-semibold text-end">Education</td>
+        <td class="ps-2">{{ person["education"] }}</td>
+      </tr>
+    }
   </table>
 }
