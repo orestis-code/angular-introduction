@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EPerson } from 'src/app/shared/interfaces/person';
-// import { sortBy } from 'lodash-es';
+import { sortBy } from 'lodash-es';
 
 @Component({
   selector: 'app-simple-datatable',
@@ -24,10 +24,10 @@ export class SimpleDatatableComponent {
   sortData(sortKey: string) {
     if (this.sortOrder[sortKey] === 'asc') {
       this.sortOrder[sortKey] = 'desc';
-      // this.data = sortBy(this.data, sortKey).reverse();
+      this.data = sortBy(this.data, sortKey).reverse();
     } else {
       this.sortOrder[sortKey] = 'asc';
-      // this.data = sortBy(this.data, sortKey);
+      this.data = sortBy(this.data, sortKey);
     }
 
     for (let key in this.sortOrder) {
