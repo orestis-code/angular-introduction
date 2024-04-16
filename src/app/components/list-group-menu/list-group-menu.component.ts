@@ -11,6 +11,10 @@ import { MenuItem } from 'src/app/shared/interfaces/menu-item';
 })
 export class ListGroupMenuComponent {
   menu: MenuItem[] = [
+    {
+      text: 'User Registration Example',
+      routerLink: 'user-registration-example',
+    },
     { 
       text: 'Component Input Example', 
     routerLink: 'component-input-example' },
@@ -40,5 +44,6 @@ export class ListGroupMenuComponent {
       text: 'HTTP Client Example',
       routerLink: 'http-client-example',
     },
+
   ];
 }
